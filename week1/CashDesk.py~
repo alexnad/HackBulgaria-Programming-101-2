@@ -28,6 +28,12 @@ class CashDesk:
     def total(self):
         return sum([note * self.money[note] for note in self.money])
 
+    def fractor_the_sum(self, money, total):
+        for note in money:
+            while total >= note and money[note] > 0:
+                total -= note
+                self.money[note] -= 1
+
     def can_withdraw_money(self, total):
         if self.total() < total:
             return False
