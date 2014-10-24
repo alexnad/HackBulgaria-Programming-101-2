@@ -4,16 +4,25 @@ import json
 
 class PlayList:
     LOW_BITRATE = 4
+    UNNAMED_PLAYLIST_COUNTER = 0
 
-    def __init__(self):
-        self.name = 'new_playlist'
+    def __init__(self, name = 'new_playlist'):
+        self.name = name
         self.songs = []
+
+    def __set_name(self, name):
+        if name == 'new_playlist':
+            PlayList.UNNAMED_PLAYLIST_COUNTER += 1
+            return name + str(PlayList.UNNAMED_PLAYLIST_COUNTER)
 
     def __getitem__(self, song_index):
         return self.songs[song_index]
 
     def __str__(self):
         return '\n'.join([str(song) for song in self.songs])
+
+    def change_playlist_name(self, name):
+        self.name = name
 
     def add_song(self, song):
         self.songs.append(song)

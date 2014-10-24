@@ -1,3 +1,7 @@
+#Some code from a diffrent project
+#used for experimenting with pygame
+
+
 from pygame.locals import *
 from pygame.math import Vector2 as Vector
 from BasicShapes import Rectangle

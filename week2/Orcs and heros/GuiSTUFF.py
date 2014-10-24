@@ -1,6 +1,8 @@
 import pygame
 from pygame.locals import *
 #from InputControl import Input
+#just experimenting with pygame
+
 
 pygame.init()
 surface = pygame.display.set_mode((500, 500))
