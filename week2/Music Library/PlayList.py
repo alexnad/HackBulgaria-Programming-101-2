@@ -6,14 +6,15 @@ class PlayList:
     LOW_BITRATE = 4
     UNNAMED_PLAYLIST_COUNTER = 0
 
-    def __init__(self, name = 'new_playlist'):
-        self.name = name
+    def __init__(self, name='new_playlist'):
+        self.name = self.__set_name(name)
         self.songs = []
 
     def __set_name(self, name):
         if name == 'new_playlist':
             PlayList.UNNAMED_PLAYLIST_COUNTER += 1
             return name + str(PlayList.UNNAMED_PLAYLIST_COUNTER)
+        return name
 
     def __getitem__(self, song_index):
         return self.songs[song_index]
