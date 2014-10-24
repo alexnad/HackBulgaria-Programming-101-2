@@ -1,1 +1,0 @@
-{"songs": [{"rating": 4, "artist": "dqdo", "bitrate": 3, "album": "Dqdo", "length": 400, "name": "baba"}], "name": "new_playlist"}
