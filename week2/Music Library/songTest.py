@@ -7,7 +7,7 @@ class TestSong(unittest.TestCase):
         self.song = Song('baba', 'Baba', 'Dqdo', 5, 400, 2)
 
     def test_init_(self):
-        self.assertEqual(self.song.name, 'baba')
+        self.assertEqual(self.song.title, 'baba')
         self.assertEqual(self.song.artist, 'Baba')
         self.assertEqual(self.song.album, 'Dqdo')
         self.assertEqual(self.song.length, 400)

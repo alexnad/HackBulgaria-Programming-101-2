@@ -4,7 +4,6 @@ import json
 
 class PlayList:
     LOW_BITRATE = 4
-    UNNAMED_PLAYLIST_COUNTER = 0
 
     def __init__(self, name='new_playlist'):
         self.name = name
@@ -16,14 +15,14 @@ class PlayList:
     def __str__(self):
         return '\n'.join([str(song) for song in self.songs])
 
-    def change_playlist_name(self, name):
-        self.name = name
+    def change_playlist_title(self, title):
+        self.title = title
 
     def add_song(self, song):
         self.songs.append(song)
 
-    def remove_song(self, song_name):
-        self.songs = [song for song in self.songs if song.name != song_name]
+    def remove_song(self, song_title):
+        self.songs = [song for song in self.songs if song.title != song_title]
 
     def total_length(self):
         return sum([song.length for song in self.songs])
@@ -35,10 +34,12 @@ class PlayList:
         self.songs = [song for song in self.songs if song.rating >= 4]
 
     def remove_bad_quality(self):
-        self.songs = [song for song in self.songs if song.bitrate > PlayList.LOW_BITRATE]
+        self.songs = [song for song in self.songs
+                      if song.bitrate > PlayList.LOW_BITRATE]
 
     def save(self):
-        songs = [{key: song.__dict__[key] for key in song.__dict__} for song in self.songs]
+        songs = [{key: song.__dict__[key] for key in song.__dict__}
+                 for song in self.songs]
 
         data = {'name': self.name, 'songs': songs}
         filename = self.name + '.txt'

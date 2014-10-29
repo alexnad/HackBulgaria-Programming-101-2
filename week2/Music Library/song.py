@@ -4,8 +4,8 @@ class Song:
     MAX_RATING = 5
     MIN_RATING = 0
 
-    def __init__(self, name, artist, album, rating, length, bitrate):
-        self.name = name
+    def __init__(self, title, artist, album, rating, length, bitrate):
+        self.title = title
         self.artist = artist
         self.album = album
         self.rating = rating
@@ -13,7 +13,11 @@ class Song:
         self.bitrate = bitrate
 
     def __str__(self):
-        return '{0}-{1}-{2}-{3}-{4}'.format(self.name, self.artist, self.album, self.length, self.rating)
+        return '{0}-{1}-{2}-{3}-{4}'.format(self.title,
+                                            self.artist,
+                                            self.album,
+                                            self.length,
+                                            self.rating)
 
     def rate(self, value):
         value_in_limits = value < Song.MIN_RATING or value > Song.MAX_RATING
