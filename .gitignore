@@ -43,6 +43,8 @@ htmlcov/
 nosetests.xml
 coverage.xml
 
+data.txt
+
 # Translations
 *.mo
 *.pot
