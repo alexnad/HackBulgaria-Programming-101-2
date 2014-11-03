@@ -32,9 +32,12 @@ var/
 pip-log.txt
 pip-delete-this-directory.txt
 
+<<<<<<< HEAD
 #vim stuff
 .py~
 
+=======
+>>>>>>> 465157ffc22ba90d22b757ed22aebc1a80cc76af
 # Unit test / coverage reports
 htmlcov/
 .tox/
@@ -43,8 +46,11 @@ htmlcov/
 nosetests.xml
 coverage.xml
 
+<<<<<<< HEAD
 data.txt
 
+=======
+>>>>>>> 465157ffc22ba90d22b757ed22aebc1a80cc76af
 # Translations
 *.mo
 *.pot
