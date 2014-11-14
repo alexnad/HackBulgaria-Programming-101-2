@@ -24,7 +24,7 @@ class DirectedGraph:
             unsearched_nodes.remove(node)
 
             if isinstance(node, int) and unsearched_nodes:
-                step = node + 1
+                step += 1
                 unsearched_nodes.append(step)
                 continue
 

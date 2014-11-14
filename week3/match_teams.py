@@ -14,8 +14,8 @@ class Match():
 
     def __get_courses(self):
         courses = [person_info['courses'] for person_info in self.info]
-        course_names = list({c['name'] for c in itertools.chain(*courses)})
-        return course_names
+        names = list({course['name'] for course in itertools.chain(*courses)})
+        return names
 
     def print_courses(self):
         for index, course in enumerate(self.courses):
@@ -39,8 +39,8 @@ class Match():
             for i in range(team_size + 1):
                 try:
                     name = random.choice(names)
-                    group.append(name)
                     names.remove(name)
+                    group.append(name)
                     group.append('\n')
                 except IndexError:
                     break
@@ -56,10 +56,10 @@ class Match():
                 print(''.join(group))
 
     def main(self):
-        intro = 'Hello, you can use one the following commands:\n\
-list_courses - this lists all the courses that are available\
-now.\nmatch_teams <course_id>, <team_size>, <group_time>\n\
-exit - leave the program\n'
+        intro = 'Hello, you can use one the following commands:\n' + \
+            'list_courses - this lists all the courses that are available' + \
+            'now.\nmatch_teams <course_id>, <team_size>, <group_time>\n' + \
+            'exit - leave the program\n'
         print(intro)
 
         running = True

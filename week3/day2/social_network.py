@@ -1,5 +1,5 @@
 from graph import DirectedGraph
-import json
+# import json
 import requests
 
 
@@ -25,7 +25,7 @@ class SocialNetwork:
         return user in self.following()
 
     def steps_to():
-        
+        pass
 
 
 network = SocialNetwork('alexnad')
